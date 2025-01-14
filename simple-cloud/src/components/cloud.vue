@@ -48,7 +48,7 @@ const wordStr = ref(
 const createWordList = () => {
   return wordStr.value.split(/\n/).map((item,index) => {
     const arr = item.split(/\s+/);
-    const rotate = (index % 2 == 0) ? 90: 0;
+    const rotate = (index % 2 == 0) ? 0: 0;
     return [arr[0], arr[1], {rotate}];
   });
 };

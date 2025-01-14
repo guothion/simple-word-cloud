@@ -89,6 +89,7 @@ export default class WordCloud {
 
     run(words=[],done = () => {}) { 
         console.log(words)
+        clear();
         // 权重排序
         const wordList = this.weightSort(words);
         let minWeight = wordList[wordList.length - 1][1];

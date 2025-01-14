@@ -111,14 +111,20 @@ export const getBoundingRect = () => {
 }
 
 export const clear = () => {
-
+    pxMap = {}
+    centerX = -1
+    centerY = -1
+    left = Infinity
+    right = -Infinity
+    top = Infinity
+    bottom = -Infinity
 }
 
 // 判断某个像素点所在的位置能否完全容纳某个文本（核心）
 const canFit = (curWordItem, [cx,cy]) => {
     if(pxMap[`${cx}|${cy}`]) return false;
     return curWordItem.imageData.data.every(([x,y]) => {
-        const left = x + cx
+        const left = x + cx;
         const top = y + cy;
         return !pxMap[`${left}|${top}`];
     }) 
